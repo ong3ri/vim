@@ -1,0 +1,66 @@
+[submodule "pack/airblade/start/vim-gitgutter"]
+	path = pack/airblade/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "pack/coc/start/coc"]
+	path = pack/coc/start/coc
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "pack/colors/start/iceberg.vim"]
+	path = pack/colors/start/iceberg.vim
+	url = https://github.com/cocopon/iceberg.vim.git
+[submodule "pack/colors/start/material.vim"]
+	path = pack/colors/start/material.vim
+	url = https://github.com/kaicataldo/material.vim.git
+[submodule "pack/colors/start/nord-vim"]
+	path = pack/colors/start/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule "pack/colors/start/oceanic-next"]
+	path = pack/colors/start/oceanic-next
+	url = https://github.com/mhartington/oceanic-next.git
+[submodule "pack/colors/start/onedark.vim"]
+	path = pack/colors/start/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
+[submodule "pack/ctrlp/start/ctrlp"]
+	path = pack/ctrlp/start/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "pack/fern/start/fern"]
+	path = pack/fern/start/fern
+	url = https://github.com/lambdalisue/fern.vim.git
+[submodule "pack/fern-renderer-nerdfont/start/fern-renderer-nerdfont"]
+	path = pack/fern-renderer-nerdfont/start/fern-renderer-nerdfont
+	url = https://github.com/lambdalisue/fern-renderer-nerdfont.vim.git
+[submodule "pack/lightline/start/lightline"]
+	path = pack/lightline/start/lightline
+	url = https://github.com/itchyny/lightline.vim
+[submodule "pack/lightline-bufferline/start/lightline-bufferline"]
+	path = pack/lightline-bufferline/start/lightline-bufferline
+	url = https://github.com/mengelbrecht/lightline-bufferline.git
+[submodule "pack/nerdfont/start/nerdfont"]
+	path = pack/nerdfont/start/nerdfont
+	url = https://github.com/lambdalisue/nerdfont.vim.git
+[submodule "pack/python-mode/start/python-mode"]
+	path = pack/python-mode/start/python-mode
+	url = https://github.com/python-mode/python-mode.git
+[submodule "pack/tasklist/start/TaskList.vim"]
+	path = pack/tasklist/start/TaskList.vim
+	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "pack/tlib-vim/start/tlib_vim"]
+	path = pack/tlib-vim/start/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "pack/vim-addon-mw-utils/start/vim-addon-mw-utils"]
+	path = pack/vim-addon-mw-utils/start/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "pack/vim-devicons/start/vim-devicons"]
+	path = pack/vim-devicons/start/vim-devicons
+	url = https://github.com/Rex-ThinkGeo/vim-devicons.git
+[submodule "pack/vim-polyglot/start/vim-polyglot"]
+	path = pack/vim-polyglot/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "pack/vim-snipmate/start/vim-snipmate"]
+	path = pack/vim-snipmate/start/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "pack/vim-snippets/start/vim-snippets"]
+	path = pack/vim-snippets/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "pack/vim-visual-multi/start/vim-visual-multi"]
+	path = pack/vim-visual-multi/start/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi.git
