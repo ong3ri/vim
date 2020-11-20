@@ -100,12 +100,15 @@ set wrapmargin=0
 set formatoptions-=t
 
 " Set up python 
+let g:pymode = 1
 let g:pymode_virtualenv = 1
+let g:pymode_virtualenv_path = './venv'
 let g:pymode_rope = 1
 let g:pymode_rope_show_doc_bind = '<C-c>d'
 let g:pymode_rope_completion = 1
 let g:pymode_rope_completion_bind = '<C-l>'
-let g:pymode_rope_autoimport = 0
+let g:pymode_rope_autoimport = 1
+let g:pymode_run = 1
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 

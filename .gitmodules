@@ -64,3 +64,6 @@
 [submodule "pack/vim-visual-multi/start/vim-visual-multi"]
 	path = pack/vim-visual-multi/start/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi.git
+[submodule "pack/surround/start/vim-surround"]
+	path = pack/surround/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
