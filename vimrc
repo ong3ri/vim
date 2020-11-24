@@ -34,8 +34,16 @@ function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
-let g:lightline#bufferline#enable_nerdfont=1
 let g:lightline#bufferline#enable_devicons=1
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 set foldmethod=indent
 set foldlevel=20
@@ -72,6 +80,7 @@ map <Leader>c :w<CR>
 map <Leader>s :b 
 map <Leader>n :bn<CR>
 map <Leader>p :bp<CR>
+map <Leader>i :PymodeRopeAutoImport<CR>
 
 set splitbelow
 set splitright
@@ -100,17 +109,9 @@ set wrapmargin=0
 set formatoptions-=t
 
 " Set up python 
-let g:pymode = 1
-let g:pymode_virtualenv = 1
 let g:pymode_virtualenv_path = './venv'
-let g:pymode_rope = 1
-let g:pymode_rope_show_doc_bind = '<C-c>d'
-let g:pymode_rope_completion = 1
-let g:pymode_rope_completion_bind = '<C-l>'
+let g:pymode_rope_completion_bind = '<C-y>'
 let g:pymode_rope_autoimport = 1
-let g:pymode_run = 1
-let g:pymode_lint = 1
-let g:pymode_lint_on_write = 1
 
 " 24bit color support
 
