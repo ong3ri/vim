@@ -67,3 +67,12 @@
 [submodule "pack/surround/start/vim-surround"]
 	path = pack/surround/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "pack/colors/start/gruvbox"]
+	path = pack/colors/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "pack/colors/start/lightline-gruvbox.vim"]
+	path = pack/colors/start/lightline-gruvbox.vim
+	url = https://github.com/shinchu/lightline-gruvbox.vim.git
+[submodule "pack/colors/start/salvation-vim"]
+	path = pack/colors/start/salvation-vim
+	url = https://github.com/branwright1/salvation-vim.git

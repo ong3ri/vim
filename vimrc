@@ -5,7 +5,7 @@ let g:fern#renderer = "nerdfont"
 
 " Removes show mode for lightline and sets color scheme
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified'] ]
@@ -56,8 +56,17 @@ set noshowmode
 set showtabline=2
 
 " Color Scheme for vim
-colorscheme iceberg
-" set background=dark " For dark theme
+colorscheme gruvbox
+let g:material_theme_style='darker' " 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker'
+
+" Fix italics in Vim
+if !has('nvim')
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
+endif
+
+let g:material_terminal_italics=1
+set background=dark " For dark theme
 " set background=light " For light theme
 
 let g:netrw_banner = 0
