@@ -76,6 +76,3 @@
 [submodule "pack/colors/start/salvation-vim"]
 	path = pack/colors/start/salvation-vim
 	url = https://github.com/branwright1/salvation-vim.git
-[submodule "pack/vim-ipython/start/vim-ipython"]
-	path = pack/vim-ipython/start/vim-ipython
-	url = https://github.com/ivanov/vim-ipython.git
