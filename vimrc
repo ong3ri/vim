@@ -1,11 +1,22 @@
 :syntax on
 
+map [[ ?{<CR>w99[{
+map ][ /}<CR>b99]}
+map ]] j0[[%/{<CR>
+map [] k$][%?}<CR>
+
+set wildignore+=*/node_modules/*,*venv/*,*/__pycache__/*
+
+set completeopt=menuone,noinsert
+
+set cursorline
+
 " Fern nerdfont
 let g:fern#renderer = "nerdfont"
 
 " Removes show mode for lightline and sets color scheme
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'simpleblack',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified'] ]
@@ -45,7 +56,7 @@ else
   set signcolumn=yes
 endif
 
-set foldmethod=indent
+set foldmethod=manual
 set foldlevel=20
 
 if !has('gui_running')
@@ -56,8 +67,10 @@ set noshowmode
 set showtabline=2
 
 " Color Scheme for vim
-colorscheme gruvbox
-let g:material_theme_style='darker' " 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker'
+let base16colorspace=256 "Access colors present in 256 colorspace
+colorscheme OceanicNext
+
+let g:material_theme_style='ocean' " 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker'
 
 " Fix italics in Vim
 if !has('nvim')
@@ -73,6 +86,7 @@ let g:netrw_banner = 0
 
 " Setting up key bindings.
 map <Leader>e :Fern .<CR>
+map <Leader>f :Fern . -reveal=%<CR>
 map <Leader>h :Fern . -opener=split<CR>
 map <Leader>v :Fern . -opener=vsplit<CR>
 nnoremap <C-J> <C-W><C-J>
@@ -118,24 +132,61 @@ set wrapmargin=0
 set formatoptions-=t
 
 " Set up python 
+let g:pymode_rope = 1
 let g:pymode_virtualenv_path = './venv'
+let g:pymode_rope_completion = 1
 let g:pymode_rope_completion_bind = '<C-y>'
-let g:pymode_rope_autoimport = 1
 
 " 24bit color support
 
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.  If you're
+"using tmux version 2.2 or later, you can remove the outermost $TMUX check and
+"use tmux's 24-bit color support (see <
+"http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 if (empty($TMUX))
   if (has("nvim"))
     "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 <
+  "https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
+  "> Based on Vim patch 7.4.1770 (`guicolors` option) <
+  "https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
+  "> < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
   if (has("termguicolors"))
     set termguicolors
   endif
 endif
+
+" Ctrl-p
+let g:ctrlp_custom_ignore = {
+        \'dir': '\.git\|node_modules\|venv'
+      \}
+
+" Google Code Formatter
+
+augroup autoformat_settings
+  autocmd FileType c,cpp AutoFormatBuffer clang-format
+  autocmd FileType python AutoFormatBuffer autopep8
+augroup END
+
+" Automatically saving sesison on exit
+fu! SaveSess()
+  execute 'mksession! ' . getcwd() . '/.session.vim'
+endfunction
+
+fu! RestoreSess()
+  if filereadable(getcwd() . '/.session.vim')
+    execute 'so ' .getcwd() . '/.session.vim'
+    if bufexists(1)
+      for l in range(1, bufnr('$'))
+        if bufwinnr(1) == -1
+          exec 'sbuffer ' . 1
+        endif
+      endfor
+    endif
+  endif
+endfunction
+
+autocmd VimLeave * call SaveSess()
+autocmd VimEnter * nested call RestoreSess()

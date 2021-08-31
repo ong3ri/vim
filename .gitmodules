@@ -73,6 +73,24 @@
 [submodule "pack/colors/start/lightline-gruvbox.vim"]
 	path = pack/colors/start/lightline-gruvbox.vim
 	url = https://github.com/shinchu/lightline-gruvbox.vim.git
-[submodule "pack/colors/start/salvation-vim"]
-	path = pack/colors/start/salvation-vim
-	url = https://github.com/branwright1/salvation-vim.git
+[submodule "pack/vim-codefmt/start/vim-codefmt"]
+	path = pack/vim-codefmt/start/vim-codefmt
+	url = https://github.com/google/vim-codefmt.git
+[submodule "pack/vim-maktaba/start/vim-maktaba"]
+	path = pack/vim-maktaba/start/vim-maktaba
+	url = https://github.com/google/vim-maktaba.git
+[submodule "pack/vim-glaive/start/vim-glaive"]
+	path = pack/vim-glaive/start/vim-glaive
+	url = https://github.com/google/vim-glaive.git
+[submodule "pack/vim-gutentags/start/vim-guten-tags"]
+	path = pack/vim-gutentags/start/vim-guten-tags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "pack/vim-js-file-import/start/vim-js-file-import"]
+	path = pack/vim-js-file-import/start/vim-js-file-import
+	url = https://github.com/kristijanhusak/vim-js-file-import.git
+[submodule "pack/bufexplorer/start/bufexplorer"]
+	path = pack/bufexplorer/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "pack/colors/start/base16"]
+	path = pack/colors/start/base16
+	url = https://github.com/chriskempson/base16-vim.git
